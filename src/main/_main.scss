@@ -1,0 +1,13 @@
+body {
+    background: $backgroundBody;
+    justify-content: center;
+    align-items: center;
+}
+
+.widget {
+    flex-basis: 30%;
+    padding-bottom: 50%;
+    background: blue;
+    height: 0;
+    background: white;
+}
