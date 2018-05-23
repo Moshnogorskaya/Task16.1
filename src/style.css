@@ -1,6 +1,5 @@
 body,
 div,
-span,
 iframe,
 a,
 h1,
@@ -72,6 +71,7 @@ body {
   flex-direction: column;
 }
 
+                              /* HEADER */
 .widget__header {
   height: 18.681318681%;
   background: #fcdd6f;
@@ -95,6 +95,8 @@ body {
   margin-top: 0.530503978%;
   font-size: 2vmin;
 }
+
+                              /* MAIN */
 
 .list {
   height: 73.186813186%;
@@ -132,12 +134,32 @@ body {
   border-radius: 50%;
 }
 
-
-
 .person__info {
   border: 1px solid gray;
   width: 45.267489711%;
+  flex-direction: column;
+  justify-content: center
 }
+
+.person__name {
+  font-size: 3vmin;
+}
+
+.person__address {
+  font-size: 1.5vmin;
+}
+
+.person__twitter {
+  color: #C7C7C7;
+  font-size: 2vmin;
+}
+
+
+
+
+
+
+
 
 .person__options-arrow {
   border: 1px solid gray;
@@ -148,6 +170,8 @@ body {
   border: 1px solid gray;
   width: 22.427983539%;
 }
+
+                              /* FOOTER */
 
 .widget__refresh {
   background: #fcdd6f;

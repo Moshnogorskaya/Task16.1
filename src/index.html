@@ -12,12 +12,29 @@
 
 <body>
     <div class='widget'>
+
         <div class='widget__header'>
             <div class='header__border-top'></div>
             <i class="fab fa-github header__image"></i>
             <p class='header__text'>За кем следить на Github</p>
         </div>
+
         <ul class='widget__main list'>
+
+            <li class='list__item person'>
+                <div class='person__avatar avatar'>
+                    <i class="fas fa-spinner avatar__loading-icon"></i>
+                    <div class='avatar__image'></div>
+                </div>
+                <div class='person__info'>
+                    <p class='person__name'>Please, wait...</p>
+                    <p class='person__address'></p>
+                    <a href='#' class='person__twitter'></a>
+                </div>
+                <div class='person__options-arrow'></div>
+                <div class='person__delete'></div>
+            </li>
+
             <li class='list__item person'>
                 <div class='person__avatar avatar'>
                     <i class="fas fa-spinner avatar__loading-icon"></i>
@@ -27,6 +44,7 @@
                 <div class='person__options-arrow'></div>
                 <div class='person__delete'></div>
             </li>
+
             <li class='list__item person'>
                 <div class='person__avatar avatar'>
                     <i class="fas fa-spinner avatar__loading-icon"></i>
@@ -35,17 +53,9 @@
                 <div class='person__info'></div>
                 <div class='person__options-arrow'></div>
                 <div class='person__delete'></div>
-            </li>
-            <li class='list__item person'>
-                <div class='person__avatar avatar'>
-                    <i class="fas fa-spinner avatar__loading-icon"></i>
-                    <div class='avatar__image'></div>
-                </div>
-                <div class='person__info'></div>
-                <div class='person__options-arrow'></div>
-                <div class='person__delete'></div>
-            </li>
+            </li>       
         </ul>
+        
         <a href='#' class='widget__refresh'>REFRESH</a>
     </div>
 </body>
