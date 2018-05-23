@@ -90,7 +90,7 @@ body {
 }
 
 .header__border-top {
-  height: 3.94117647%;
+  height: 2.652519893%;
   width: 100%;
   background: black;
 }
@@ -98,20 +98,48 @@ body {
 .header__image {
   width: 13.262599469%;
   height: 57.647058823%;
-  margin-top: 10px;
+  margin-top: 1.326259946%;
 }
 
+.header__text {
+  margin-top: 0.530503978%;
+  font-size: 2vmin;
+}
 
 
 .list {
   flex-basis: 73.186813186%;
   flex-direction:column;
+/*   overflow: hidden; */
 }
 
 .list__item {
   flex-basis: 33.33333333%;
+  width: 128.912466844%;
   border-bottom: 1px solid #C9C9C9;
+  background: white;
 }
+
+.person__avatar {
+  border: 1px solid gray;
+  width: 21.193415637%;
+}
+
+.person__info {
+  border: 1px solid gray;
+  width: 45.267489711%;
+}
+
+.person__options-arrow {
+  border: 1px solid gray;
+  width: 11.111111111%;
+}
+
+.person__delete {
+  border: 1px solid gray;
+  width: 22.427983539%;
+}
+
 
 .widget__refresh {
   background: #FCDD6F;
