@@ -1,0 +1,12 @@
+body {
+    background: $backgroundBody;
+    justify-content: center;
+    align-items: center;
+    font-family: "Roboto", sans-serif;
+  }
+  
+  .widget {
+    height: 50%;
+    width: 25%;
+    flex-direction: column;
+  }

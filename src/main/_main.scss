@@ -1,13 +1,71 @@
-body {
-    background: $backgroundBody;
+.list {
+    height: 73.186813186%;
+    flex-direction: column;
+    /*   overflow: hidden; */
+  }
+  
+  .list__item {
+    position: relative;
+    height: 33.33333333%;
+    width: 128.912466844%;
+    border-bottom: 1px solid #c9c9c9;
+    background: white;
+  }
+  
+  .person__avatar {
+    width: 21.193415637%;
     justify-content: center;
     align-items: center;
-}
-
-.widget {
-    flex-basis: 30%;
-    padding-bottom: 50%;
-    background: blue;
-    height: 0;
-    background: white;
-}
+    position: relative;
+  }
+  
+  .avatar__loading-icon {
+    font-size: 5vmin;
+    color: lightgray;
+  }
+  
+  .avatar__image {
+    position:absolute;
+    top: center;
+    left: center;
+    border: 1px solid lightgray;
+    width: 7vmin;
+    height: 7vmin;
+    border-radius: 50%;
+  }
+  
+  .person__info {
+    width: 45.267489711%;
+    flex-direction: column;
+    justify-content: center
+  }
+  
+  .person__name {
+    font-size: 3vmin;
+  }
+  
+  .person__address {
+    font-size: 1.5vmin;
+  }
+  
+  .person__twitter {
+    color: #C7C7C7;
+    font-size: 2vmin;
+  }
+  
+  .person__options-arrow {
+    width: 11.111111111%;
+    font-size: 6vmin;
+    align-items: center;
+    justify-content:  center;
+  }
+  
+  
+  .person__delete {
+    width: 22.427983539%;
+    background: #E37171;
+    font-size: 5vmin;
+    justify-content: center;
+    align-items: center;
+    color: black;
+  }

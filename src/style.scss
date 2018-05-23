@@ -1,4 +1,11 @@
+// Colors
 $backgroundBody: #E5E5E5;
 
+// Initialization
 @import "init/reset";
+@import "init/init";
+
+// Main part
+@import "header/header";
 @import "main/main";
+@import "footer/footer";
