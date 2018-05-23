@@ -54,7 +54,7 @@ input {
   display: flex;
   box-sizing: border-box;
 }
-div {
+div, ul, li {
   border: 1px solid grey;
 }
 
@@ -82,5 +82,24 @@ body {
 }
 
 .widget__header {
-   flex-basis: 30%;
+   flex-basis: 18.681318681%;
+   background:#FCDD6F;
+}
+
+.list {
+  flex-basis: 73.186813186%;
+  flex-direction:column;
+}
+
+.list__item {
+  flex-basis: 33.33333333%;
+}
+
+.widget__refresh {
+  background: #FCDD6F;
+  flex-basis: 8.131868131%;
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  color: black;
 }
