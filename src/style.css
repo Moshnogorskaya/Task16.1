@@ -1,0 +1,86 @@
+body,
+div,
+span,
+iframe,
+a,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+big,
+cite,
+code,
+em,
+img,
+ins,
+q,
+s,
+small,
+strong,
+u,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+canvas,
+footer,
+header,
+menu,
+nav,
+input {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  box-sizing: border-box;
+}
+div {
+  border: 1px solid grey;
+}
+
+body {
+    background: #E5E5E5;
+    justify-content: center;
+    align-items: center;
+}
+
+.proportional-container {
+  flex-basis: 30%;
+  padding-bottom: 36.2068965517%;
+  height: 0;
+  position:relative;
+}
+
+.widget {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: white;
+  flex-direction: column;
+}
+
+.widget__header {
+   flex-basis: 30%;
+}
