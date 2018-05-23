@@ -164,6 +164,9 @@ body {
 .person__options-arrow {
   border: 1px solid gray;
   width: 11.111111111%;
+  font-size: 6vmin;
+  align-items: center;
+  justify-content:  center;
 }
 
 .person__delete {
