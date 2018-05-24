@@ -36,16 +36,13 @@ const suggestion1Stream = createSuggestionStream(close1ClickStream);
 const suggestion2Stream = createSuggestionStream(close2ClickStream);
 const suggestion3Stream = createSuggestionStream(close3ClickStream);
 
-suggestion1Stream.subscribe((suggestion) => {
-  if (suggestion === 0) {}
-});
+const renderSuggestion = (suggestedUser, selector) => {
+let name = $(selector).children('.person__name');
+name.textContent = suggestedUser.
+}
 
-const suggestion2Stream = responseStream
-  .map(listUsers => listUsers[Math.floor(Math.random() * listUsers.length)]);
-
-const suggestion3Stream = responseStream
-  .map(listUsers => listUsers[Math.floor(Math.random() * listUsers.length)]);
-
-refreshClickStream.subscribe(() => {});
+suggestion1Stream.subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-1'));
+suggestion2Stream.subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-2'));
+suggestion3Stream.subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-3'));
 
 console.log(suggestion1Stream);
