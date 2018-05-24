@@ -1,11 +1,14 @@
-.widget__refresh {
-  background: #fcdd6f;
+.refresh-group {
+  background: $footerBackground;
   height: 8.131868131%;
   text-decoration: none;
   justify-content: center;
   align-items: center;
   color: black;
   font-size: 2vmin;
+  &__icon {
+    margin-right: 2.122015915%;
+  }
 }
 
 .refresh-group__icon {

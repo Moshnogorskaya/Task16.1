@@ -1,71 +1,64 @@
 .list {
-    height: 73.186813186%;
-    flex-direction: column;
-    /*   overflow: hidden; */
-  }
-  
-  .list__item {
+  height: 73.186813186%;
+  flex-direction: column;
+  overflow: hidden;
+  &__item {
     position: relative;
     height: 33.33333333%;
     width: 128.912466844%;
-    border-bottom: 1px solid #c9c9c9;
-    background: white;
+    border-bottom: 1px solid $itemBorderColor;
+    background: $itemBackground;
   }
-  
-  .person__avatar {
+}
+
+.person {
+  &__avatar {
     width: 21.193415637%;
     justify-content: center;
     align-items: center;
     position: relative;
+    .avatar {
+      &__loading-icon {
+        font-size: 5vmin;
+        color: $loadingIconColor;
+      }
+      &__image {
+        position: absolute;
+        top: center;
+        left: center;
+        width: 7vmin;
+        height: 7vmin;
+        border-radius: 50%;
+      }
+    }
   }
-  
-  .avatar__loading-icon {
-    font-size: 5vmin;
-    color: lightgray;
-  }
-  
-  .avatar__image {
-    position:absolute;
-    top: center;
-    left: center;
-    border: 1px solid lightgray;
-    width: 7vmin;
-    height: 7vmin;
-    border-radius: 50%;
-  }
-  
-  .person__info {
+  &__info {
     width: 45.267489711%;
     flex-direction: column;
-    justify-content: center
+    justify-content: center;
   }
-  
-  .person__name {
+  &__name {
     font-size: 3vmin;
   }
-  
-  .person__address {
+  &__address {
     font-size: 1.5vmin;
   }
-  
-  .person__twitter {
-    color: #C7C7C7;
+  &__twitter {
+    color: $linkColor;
     font-size: 2vmin;
   }
-  
-  .person__options-arrow {
+  &__options-arrow {
     width: 11.111111111%;
     font-size: 6vmin;
     align-items: center;
-    justify-content:  center;
+    justify-content: center;
   }
-  
-  
-  .person__delete {
+  &__delete {
     width: 22.427983539%;
-    background: #E37171;
+    background: $deleteBackground;
     font-size: 5vmin;
     justify-content: center;
     align-items: center;
-    color: black;
+    color: $deleteColor;
   }
+}

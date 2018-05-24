@@ -1,23 +1,20 @@
-.widget__header {
-    height: 18.681318681%;
-    background: #fcdd6f;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .header__border-top {
+.header {
+  height: 18.681318681%;
+  background: $headerColor;
+  flex-direction: column;
+  align-items: center;
+  &__border-top {
     height: 2.652519893%;
     width: 100%;
     background: black;
   }
-  
-  .header__image {
+  &__image {
     font-size: 5.5vmin;
     height: 57.647058823%;
     margin-top: 1.326259946%;
   }
-  
-  .header__text {
+  &__text {
     margin-top: 0.530503978%;
     font-size: 2vmin;
   }
+}
