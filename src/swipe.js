@@ -7,10 +7,14 @@ import 'rxjs/add/operator/combineLatest';
 import 'rxjs/add/operator/merge';
 
 const refreshButton = $('.widget__refresh');
-const close1Button = $('.delete-button-1');
+const closeButton1 = $('.delete-button-1');
+const closeButton2 = $('.delete-button-2');
+const closeButton3 = $('.delete-button-3');
 
 const refreshClickStream = Observable.fromEvent(refreshButton, 'click');
-const closeClickStream = Observable.fromEvent(close1Button, 'click');
+const close1ClickStream = Observable.fromEvent(closeButton1, 'click');
+const close2ClickStream = Observable.fromEvent(closeButton1, 'click');
+const close3ClickStream = Observable.fromEvent(closeButton1, 'click');
 
 const requestStream = refreshClickStream.startWith('startup click')
   .map(() => {
