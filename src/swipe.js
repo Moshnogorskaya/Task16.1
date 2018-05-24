@@ -25,10 +25,16 @@ const requestStream = refreshClickStream.startWith('startup click')
 const responseStream = requestStream
   .mergeMap(requestURL => Observable.from($.getJSON(requestURL)));
 
-const suggestion1Stream = closeClickStream.startWith('startup click')
-  .combineLatest(responseStream, ((click, listUsers) =>
-    listUsers[Math.floor(Math.random() * listUsers.length)]))
-  .merge(refreshClickStream.map(() => null));
+const createSuggestionStream = (closeClickStream) => {
+  return closeClickStream.startWith('startup click')
+    .combineLatest(responseStream, ((click, listUsers) =>
+      listUsers[Math.floor(Math.random() * listUsers.length)]))
+    .merge(refreshClickStream.map(() => null));
+};
+
+const suggestion1Stream = createSuggestionStream(close1ClickStream);
+const suggestion2Stream = createSuggestionStream(close2ClickStream);
+const suggestion3Stream = createSuggestionStream(close3ClickStream);
 
 suggestion1Stream.subscribe((suggestion) => {
   if (suggestion === 0) {}
