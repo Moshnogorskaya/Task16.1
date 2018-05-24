@@ -1,2 +1,2 @@
-import './swipe';
 import './style.scss';
+import './swipe';
