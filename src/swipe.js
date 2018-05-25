@@ -32,6 +32,10 @@ function createSuggestionStream(closeClickStream) {
     .merge(refreshClickStream.map(() => null));
 }
 
+function createSuggestionStreamDetails(suggestionStream) {
+  return suggestionStream.mergeMap(suggestedUser => Observable.from($.getJSON(`https://api.github.com/users/${suggestedUser.login}`)));
+}
+
 const suggestion1Stream = createSuggestionStream(close1ClickStream);
 const suggestion2Stream = createSuggestionStream(close2ClickStream);
 const suggestion3Stream = createSuggestionStream(close3ClickStream);
@@ -44,17 +48,22 @@ function renderSuggestion(suggestedUser, selector) {
     person.css('visibility', 'visible');
     const name = $(`${selector} .person__name`);
     const avatar = $(`${selector} .avatar__image`);
-    const address = $(`${selector} .person__address`);
-    name.html(suggestedUser.login);
-    avatar.css('background', 'url(suggestedUser.avatar_url)');
-// address.textContent =
+    const location = $(`${selector} .location__text`);
+    const link = $(`${selector} .person__link`);
+    name.html(suggestedUser.name);
+    location.html(suggestedUser.location);
+    link.html(`@${suggestedUser.login}`);
+    link.attr('href', suggestedUser.html_url);
+    avatar.css({
+      background: `url(${suggestedUser.avatar_url}) no-repeat`,
+      'background-size': 'contain',
+    });
   }
 // avatar.css('background', 'url(suggestedUser.avatar_url)');
 // address.textContent =
 }
-
-suggestion1Stream.subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-1'));
-suggestion2Stream.subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-2'));
-suggestion3Stream.subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-3'));
+createSuggestionStreamDetails(suggestion1Stream).subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-1'));
+createSuggestionStreamDetails(suggestion2Stream).subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-2'));
+createSuggestionStreamDetails(suggestion3Stream).subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-3'));
 
 console.log(suggestion1Stream);
