@@ -28,8 +28,7 @@ const responseStream = requestStream
 function createSuggestionStream(closeClickStream) {
   return closeClickStream.startWith('startup click')
     .combineLatest(responseStream, ((click, listUsers) =>
-      listUsers[Math.floor(Math.random() * listUsers.length)]))
-    .merge(refreshClickStream.map(() => null));
+      listUsers[Math.floor(Math.random() * listUsers.length)]));
 }
 
 function createSuggestionStreamDetails(suggestionStream) {
