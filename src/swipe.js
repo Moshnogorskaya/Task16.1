@@ -41,10 +41,13 @@ function renderSuggestion(suggestedUser, selector) {
   if (suggestedUser === null) {
     person.css('visibility', 'hidden');
   } else {
+    person.css('visibility', 'visible');
     const name = $(`${selector} .person__name`);
-    // const avatar = $(`${selector} .avatar__image`);
-    // const address = $(`${selector} .person__address`);
-    name.innerHtml = suggestedUser.login;
+    const avatar = $(`${selector} .avatar__image`);
+    const address = $(`${selector} .person__address`);
+    name.html(suggestedUser.login);
+    avatar.css('background', 'url(suggestedUser.avatar_url)');
+// address.textContent =
   }
 // avatar.css('background', 'url(suggestedUser.avatar_url)');
 // address.textContent =
