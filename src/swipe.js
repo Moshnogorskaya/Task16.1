@@ -25,23 +25,30 @@ const requestStream = refreshClickStream.startWith('startup click')
 const responseStream = requestStream
   .mergeMap(requestURL => Observable.from($.getJSON(requestURL)));
 
-const createSuggestionStream = closeClickStream => closeClickStream.startWith('startup click')
-  .combineLatest(responseStream, ((click, listUsers) =>
-    listUsers[Math.floor(Math.random() * listUsers.length)]))
-  .merge(refreshClickStream.map(() => null));
+function createSuggestionStream(closeClickStream) {
+  return closeClickStream.startWith('startup click')
+    .combineLatest(responseStream, ((click, listUsers) =>
+      listUsers[Math.floor(Math.random() * listUsers.length)]))
+    .merge(refreshClickStream.map(() => null));
+}
 
 const suggestion1Stream = createSuggestionStream(close1ClickStream);
 const suggestion2Stream = createSuggestionStream(close2ClickStream);
 const suggestion3Stream = createSuggestionStream(close3ClickStream);
 
-const renderSuggestion = (suggestedUser, selector) => {
-  const name = $(`${selector} .person__name`);
-  // const avatar = $(`${selector} .avatar__image`);
-  // const address = $(`${selector} .person__address`);
-  name.textContent = suggestedUser.login;
+function renderSuggestion(suggestedUser, selector) {
+  const person = $(selector);
+  if (suggestedUser === null) {
+    person.css('visibility', 'hidden');
+  } else {
+    const name = $(`${selector} .person__name`);
+    // const avatar = $(`${selector} .avatar__image`);
+    // const address = $(`${selector} .person__address`);
+    name.innerHtml = suggestedUser.login;
+  }
 // avatar.css('background', 'url(suggestedUser.avatar_url)');
 // address.textContent =
-};
+}
 
 suggestion1Stream.subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-1'));
 suggestion2Stream.subscribe(suggestedUser => renderSuggestion(suggestedUser, '.suggestion-2'));
