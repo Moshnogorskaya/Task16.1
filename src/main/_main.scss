@@ -1,7 +1,7 @@
 .list {
   height: 73.186813186%;
   flex-direction: column;
-  overflow: hidden;
+  // overflow: hidden;
   &__item {
     position: relative;
     height: 33.33333333%;
@@ -54,13 +54,13 @@
     margin-top: 1%;
   }
   &__options-arrow {
-    width: 11.111111111%;
+    width: 12.111111111%;
     font-size: 6vmin;
     align-items: center;
     justify-content: center;
   }
   &__delete {
-    width: 22.427983539%;
+    width: 21.427983539%;
     background: $deleteBackground;
     font-size: 5vmin;
     justify-content: center;
