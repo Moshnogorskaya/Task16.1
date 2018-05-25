@@ -8,7 +8,7 @@ function options(selector) {
 
   const showOptionsStream = Observable.fromEvent(arrow, 'mouseenter');
 
-  showOptionsStream.subscribe(() => profile.css('margin-left', '-21.427983539%'));
+  showOptionsStream.subscribe(() => profile.css('margin-left', '-28.912466843%'));
 }
 
 options('.suggestion-1');
