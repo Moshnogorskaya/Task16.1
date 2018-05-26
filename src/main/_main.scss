@@ -1,13 +1,14 @@
 .list {
   height: 73.186813186%;
   flex-direction: column;
-  // overflow: hidden;
+  overflow: hidden;
   &__item {
     position: relative;
     height: 33.33333333%;
     width: 128.912466844%;
     border-bottom: 1px solid $itemBorderColor;
     background: $itemBackground;
+    transition: margin-left 1s ease 0.2s;
   }
 }
 
